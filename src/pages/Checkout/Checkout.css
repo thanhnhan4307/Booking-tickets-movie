@@ -1,0 +1,85 @@
+.ghe{/*Ghế thường*/
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    background-color: #4B7447;
+    color: #fff;
+  }
+  
+  .gheDaDat{
+    background-color: rgb(223, 54, 54);
+    cursor: no-drop;
+  }
+  
+  .gheDangDat{
+    background-color: rgb(194, 194, 191)!important;
+  }
+  
+  .gheVip{
+    background-color: #Eb8A44;
+  }
+
+  .gheDaDuocDat{
+    background-color: rgb(50, 149, 169);
+    color: rgb(47, 246, 243) !important;
+
+  }
+  .icon .b{
+    font-size: 20px;
+    color: #6d1d6d;
+    animation: bounce 1.5s ease infinite 0s both;
+    /* animation-name: bounce;
+    animation-duration: 1.6s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-delay: 0s; */
+
+}
+.order button{
+  display: inline-block;
+  padding: 24px 32px;
+  border: 0;
+  text-decoration: none;
+  border-radius: 15px;
+  background-color: rgba(254, 248, 248, 0.1);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(30px);
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.order button:hover{
+  background-color: rgba(255,255,255,0.2);
+}
+  
+  
+
+  @keyframes bounce{
+    0%{
+        opacity: 0;
+        transform: translateY(0);
+
+    }
+    60%{
+        opacity: 0.7;
+        transform: translateY(100px);
+
+    }
+    80%{
+        opacity: 1;
+        transform: translateY(70px);
+
+
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(100px);
+
+    }
+
+}
