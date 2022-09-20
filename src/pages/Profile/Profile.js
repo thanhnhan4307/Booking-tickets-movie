@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-undef */
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-vars */
@@ -8,6 +9,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { layThongTinNguoiDungAction } from "../../redux/actions/QuanLyNguoiDungAction";
 import moment from "moment";
 import "./Profile.css";
+
+
 
 export default function Profile(props) {
   const dispatch = useDispatch();
@@ -24,6 +27,8 @@ export default function Profile(props) {
   });
 
   const renderTicketItem = function () {
+
+
     return thongTinNguoiDung.thongTinDatVe?.map((ticket, index) => {
       return (
         <div className="p-2 lg:w-1/3 md:w-1/2 w-full" key={index}>
@@ -89,7 +94,7 @@ export default function Profile(props) {
             <div className="container px-5 py-24 mx-auto">
               <div className="flex flex-col text-center w-full mb-20">
                 <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-100">
-                  Lịch sử đặt vé của bạn
+                  Lịch sử đặt vé xem phim của bạn
                 </h1>
                 <p className="lg:w-2/3 mx-auto leading-relaxed text-base"></p>
               </div>
