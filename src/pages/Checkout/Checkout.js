@@ -183,8 +183,8 @@ function Checkout(props) {
           </div>
           <hr style={{ backgroundColor: "white" }}></hr>
           <div>
-            <h3 className="text-center text-green-700 mt-3">
-              <span className="text-white font-bold text-2xl">
+            <h3 className="text-center text-green-500 mt-3">
+              <span className="font-bold text-2xl">
                 <span>Tổng tiền: </span>
                 {danhSachGheDangDat
                   .reduce((tongTien, ghe, index) => {
@@ -350,6 +350,7 @@ function KetQuaDatVe(props) {
 
   const renderTicketItem = function () {
     return thongTinNguoiDung.thongTinDatVe?.map((ticket, index) => {
+      const seats = _.first(ticket.danhSachGhe);
       return (
         <div className="p-2 lg:w-1/3 md:w-1/2 w-full" key={index}>
           <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
@@ -359,11 +360,30 @@ function KetQuaDatVe(props) {
               src={ticket.hinhAnh}
             />
             <div className="flex-grow">
-              <h2 className="text-gray-100 title-font font-medium">
+              <h2 className="text-pink-500 title-font font-medium text-xl">
                 {ticket.tenPhim}
               </h2>
-              <p className="text-gray-100">
-                {moment(ticket.ngayDat).format("hh:mm A - DD-MM-YYYY")}
+              <p className="text-gray-400">
+                <span className="font-bold">Giờ chiếu:</span>{" "}
+                {moment(ticket.ngayDat).format("hh:mm A")} <br />{" "}
+                <span className="font-bold">Ngày chiếu:</span>{" "}
+                {moment(ticket.ngayDat).format("DD-MM-YYYY")}{" "}
+              </p>
+              <p>
+                <span className="font-bold text-white">Địa điểm:</span>{" "}
+                {seats.tenHeThongRap}{" "}
+              </p>
+              <p>
+                <span className="font-bold">Tên rạp: </span>
+                {seats.tenCumRap} <br /> <span className="font-bold">Ghế:</span>{" "}
+                {ticket.danhSachGhe.map((ghe, index) => {
+                  return (
+                    <span className="text-green-500 text-lg" key={index}>
+                      {" "}
+                      [ {ghe.tenGhe} ]{" "}
+                    </span>
+                  );
+                })}
               </p>
             </div>
           </div>

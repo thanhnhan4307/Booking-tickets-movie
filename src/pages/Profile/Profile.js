@@ -30,6 +30,7 @@ export default function Profile(props) {
 
 
     return thongTinNguoiDung.thongTinDatVe?.map((ticket, index) => {
+      const seats = _.first(ticket.danhSachGhe);
       return (
         <div className="p-2 lg:w-1/3 md:w-1/2 w-full" key={index}>
           <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
@@ -38,12 +39,31 @@ export default function Profile(props) {
               className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
               src={ticket.hinhAnh}
             />
-            <div className="flex-grow">
-              <h2 className="text-gray-100 title-font font-medium">
+           <div className="flex-grow">
+              <h2 className="text-pink-500 title-font font-medium text-xl">
                 {ticket.tenPhim}
               </h2>
-              <p className="text-gray-100">
-                {moment(ticket.ngayDat).format("hh:mm A - DD-MM-YYYY")}
+              <p className="text-gray-400">
+                <span className="font-bold">Giờ chiếu:</span>{" "}
+                {moment(ticket.ngayDat).format("hh:mm A")} <br />{" "}
+                <span className="font-bold">Ngày chiếu:</span>{" "}
+                {moment(ticket.ngayDat).format("DD-MM-YYYY")}{" "}
+              </p>
+              <p>
+                <span className="font-bold text-white">Địa điểm:</span>{" "}
+                {seats.tenHeThongRap}{" "}
+              </p>
+              <p>
+                <span className="font-bold">Tên rạp: </span>
+                {seats.tenCumRap} <br /> <span className="font-bold">Ghế:</span>{" "}
+                {ticket.danhSachGhe.map((ghe, index) => {
+                  return (
+                    <span className="text-green-500 text-xl" key={index}>
+                      {" "}
+                      [ {ghe.tenGhe} ]{" "}
+                    </span>
+                  );
+                })}
               </p>
             </div>
           </div>
@@ -72,16 +92,16 @@ export default function Profile(props) {
               />
             </div>
             <div className="mx-8 my-8">
-              <div style={{ color: "white" }} className="my-3">
-                <i>Họ tên: </i>
+              <div style={{ color: "white" }} className="my-3 ">
+                <span className="font-bold text-lg">Họ tên: </span>
                 {userLogin.hoTen}
               </div>
               <div style={{ color: "white" }} className="my-3">
-                <i>Email: </i>
+              <span className="font-bold text-lg">Email: </span>
                 {userLogin.email}
               </div>
               <div style={{ color: "white" }} className="my-3">
-                <i>Số điện thoại: </i>
+              <span className="font-bold text-lg">Số điện thoại: </span>
                 {userLogin.soDT}
               </div>
             </div>
@@ -93,10 +113,10 @@ export default function Profile(props) {
           <section className="text-gray-100 body-font">
             <div className="container px-5 py-24 mx-auto">
               <div className="flex flex-col text-center w-full mb-20">
-                <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-100">
+                <h1  className="sm:text-3xl text-2xl font-medium title-font mb-4  text-white ">
                   Lịch sử đặt vé xem phim của bạn
                 </h1>
-                <p className="lg:w-2/3 mx-auto leading-relaxed text-base"></p>
+                <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-400">Hãy xem thông tin địa điểm và thời gian để xem phim vui vẻ bạn nhé !</p>
               </div>
               <div className="flex flex-wrap -m-2">{renderTicketItem()}</div>
             </div>
