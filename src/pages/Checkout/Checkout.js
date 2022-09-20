@@ -195,12 +195,12 @@ function Checkout(props) {
             </h3>
           </div>
           <div style={{ color: "white" }} className="my-3">
-            <i>Email: </i> <br />
+            <i>Email: </i>
             {userLogin.email}
           </div>
           <hr style={{ backgroundColor: "white" }}></hr>
           <div style={{ color: "white" }} className="my-3">
-            <i>Phone: </i> <br />
+            <i>Phone: </i>
             {userLogin.soDT}
           </div>
           <hr style={{ backgroundColor: "white" }}></hr>
@@ -341,7 +341,7 @@ function KetQuaDatVe(props) {
     (state) => state.QuanLyNguoiDungReducer
   );
   const { userLogin } = useSelector((state) => state.QuanLyNguoiDungReducer);
-  console.log("thongTinNguoiDung", userLogin);
+  // console.log("thongTinNguoiDung", userLogin);
 
   useEffect(() => {
     const action = layThongTinNguoiDungAction();
@@ -356,7 +356,7 @@ function KetQuaDatVe(props) {
             <img
               alt="team"
               className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-              src="https://picsum.photos/200/300"
+              src={ticket.hinhAnh}
             />
             <div className="flex-grow">
               <h2 className="text-gray-100 title-font font-medium">
@@ -370,29 +370,6 @@ function KetQuaDatVe(props) {
         </div>
       );
     });
-
-    // return thongTinNguoiDung.thongTinDatVe?.map((ticket, index) => {
-    //   return (
-    //     <div className="p-2 lg:w-1/3 md:w-1/2 w-full" key={index}>
-    //       <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-    //         <img
-    //           alt="team"
-    //           className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-    //           src="https://picsum.photos/200/350"
-    //         />
-    //         <div className="flex-grow">
-    //           <h2 className="text-gray-400 title-font font-medium">
-    //             {ticket.tenPhim}
-    //           </h2>
-    //           <p className="text-gray-500">
-    //             {moment(ticket.ngayDat).format("hh:mm A DD-MM-YYYY")}
-    //           </p>
-    //           <p>Địa điểm: {_.first(ticket.danhSachGhe)}</p>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   );
-    // });
   };
   return (
     <div className="">
@@ -400,24 +377,13 @@ function KetQuaDatVe(props) {
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-20">
             <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-100">
-              Lịch sử đặt vé
+              Đặt vé thành công
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base"></p>
           </div>
           <div className="flex flex-wrap -m-2">{renderTicketItem()}</div>
         </div>
       </section>
-
-      {/* <section className="text-gray-600 body-font">
-        <div className=" px-24 py-24 mx-auto">
-          <div className="flex flex-col text-center w-full mb-20">
-            <h1 className="sm:text-2xl text-2xl font-medium title-font mb-4 text-gray-900">
-              Đặt vé thành công
-            </h1>
-          </div>
-          <div>{renderTicketItem()}</div>
-        </div>
-      </section> */}
     </div>
   );
 }

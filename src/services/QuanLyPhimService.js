@@ -36,7 +36,7 @@ export class QuanLyPhimService extends baseService {
   };
 
   xoaPhim = (maPhim) => {
-    return this.delete(`/api/QuanLyPhim/XP?MaPhim=${maPhim}`);
+    return http.delete(`/api/QuanLyPhim/XP?MaPhim=${maPhim}`);
   };
 }
 
