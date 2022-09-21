@@ -375,7 +375,8 @@ function KetQuaDatVe(props) {
               </p>
               <p>
                 <span className="font-bold">Tên rạp: </span>
-                {seats.tenCumRap} <br /> <span className="font-bold">Ghế:</span>{" "}
+                {seats.tenCumRap} <br />{" "}
+                <span className="font-bold">Số ghế: </span>{" "}
                 {ticket.danhSachGhe.map((ghe, index) => {
                   return (
                     <span className="text-green-500 text-lg" key={index}>
@@ -397,7 +398,7 @@ function KetQuaDatVe(props) {
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-20">
             <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-100">
-              Thông tin phim đã đặt
+              Thông tin phim bạn đã đặt
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base"></p>
           </div>

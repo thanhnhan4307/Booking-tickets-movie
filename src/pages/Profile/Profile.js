@@ -55,7 +55,7 @@ export default function Profile(props) {
               </p>
               <p>
                 <span className="font-bold">Tên rạp: </span>
-                {seats.tenCumRap} <br /> <span className="font-bold">Ghế:</span>{" "}
+                {seats.tenCumRap} <br /> <span className="font-bold">Số ghế:</span>{" "}
                 {ticket.danhSachGhe.map((ghe, index) => {
                   return (
                     <span className="text-green-500 text-xl" key={index}>
