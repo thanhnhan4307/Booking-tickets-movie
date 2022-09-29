@@ -23,6 +23,7 @@ export default function UserTemplate(props) {
             <div>
               <Login {...propsRoute} />
             </div>
+            
           </>
         );
       }}
