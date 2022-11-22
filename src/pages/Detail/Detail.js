@@ -7,7 +7,7 @@
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-undef */
 import React, { useEffect } from "react";
-import "../../assets/styles/circle.scss";
+// import "../../assets/styles/circle.scss";
 import { Radio, Space, Tabs } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import { SET_CHI_TIET_PHIM } from "../../redux/actions/types/QuanLyRapType";
@@ -18,8 +18,8 @@ import { Rate } from "antd";
 import cgv2 from "../../assets/img/cgv2.jpg";
 import { NavLink } from "react-router-dom";
 import { history } from "../../App";
-import '../../assets/styles/circle.scss'
-import "./Detail.scss"
+// import '../../assets/styles/circle.scss'
+// import "./Detail.scss"
 
 const { TabPane } = Tabs;
 

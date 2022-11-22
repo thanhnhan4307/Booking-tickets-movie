@@ -24,6 +24,7 @@ import Admin from "./pages/Admin/Admin/Admin";
 import AddFilm from "./pages/Admin/Films/AddFilm/AddFilm";
 import EditFilm from "./pages/Admin/Admin/EditFilm/EditFilm";
 import ShowTime from "./pages/Admin/Admin/ShowTime/ShowTime";
+// import 'antd/dist/antd.min.css'
 
 
 
